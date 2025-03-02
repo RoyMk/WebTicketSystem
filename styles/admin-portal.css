@@ -1,0 +1,70 @@
+#tableSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:50%;
+
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.itemCheckbox{
+    height: 15px;
+    width: 15px;
+    margin-right: 5%;
+}
+
+
+#addItem{
+    margin-left: 25px;
+    position: fixed;
+    right: 16%;
+    top: 20%;
+}
+
+
+.addItemWindow{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: absolute;
+    top: 25%;
+    right: 4%;
+    bottom: 0;
+
+}
+
+.input-field input, textarea{
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.input-field{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+#addItemWindowButton{
+    transform: translate(50%);
+    width: 150px;
+    padding: 10px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+#ticketDescription{
+    resize: vertical;
+
+}

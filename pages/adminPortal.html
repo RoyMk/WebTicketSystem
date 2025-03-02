@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="/styles/admin-portal.css">
+</head>
+<body>
+<button id="addItem">Add Item</button>
+<!--<a id="returnToLogin" href="login.html">LOGIN</a>-->
+<main>
+    <header>
+        <h1>Admin Portal</h1>
+    </header>
+    <section id="tableSection">
+        <input class="itemCheckbox" type="checkbox">
+        <table id="ticketTable">
+
+            <tr>
+                <th>Ticket Number</th>
+                <th>Ticket Description</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Malware removal</td>
+                <td>
+                    <select>
+                        <option>Active</option>
+                        <option>Completed</option>
+                    </select>
+                </td>
+                <td>March 1, 2025</td>
+            </tr>
+        </table>
+
+
+    </section>
+
+    <section class="addItemWindow hidden">
+        <div class="container">
+            <div class="ticket-number input-field">
+                <label for="ticketNumber">Ticket Number</label>
+                <input type="text" name="ticketNumber" id="ticketNumber" placeholder="Ticket Number">
+            </div>
+
+            <div class="ticket-description input-field">
+                <label for="ticketDescription">Ticket Description</label>
+                <textarea type="text" name="ticketDescription" id="ticketDescription" placeholder="Ticket Description" ></textarea>
+            </div>
+
+            <div class="ticket-status input-field">
+                <label for="ticketStatus">Ticket Status</label>
+                <input type="text" name="ticketStatus" id="ticketStatus" placeholder="Ticket Status">
+            </div>
+
+            <div class="ticket-date input-field">
+                <label for="date">Date</label>
+                <input type="text" name="date" id="date" placeholder="Date">
+            </div>
+
+
+            <button id="addItemWindowButton">
+                Add Item
+            </button>
+        </div>
+    </section>
+
+</main>
+
+
+<script src="/js/admin-portal.js"></script>
+</body>
+</html>
