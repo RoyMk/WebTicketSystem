@@ -2,18 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Portal</title>
+    <title style="z-index: 999999">Admin Portal</title>
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
     <link rel="stylesheet" href="/styles/admin-portal.css">
 </head>
 <body>
-<button id="addItem">Add Item</button>
+<div id="overlay" class="hidden"></div>
+<section class="addItemWindow hidden">
+    <button id="addItemWindowCloseWindow" style="width: fit-content; text-align: center; margin-left: 10px">Close Window</button>
+    <div class="input-field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name">
+    </div>
+    <div class="input-field">
+        <label for="department">Department</label>
+        <input type="text" name="department" id="department" placeholder="Enter your department">
+    </div>
+    <div class="ticket-description input-field">
+        <label for="ticketDescription">Ticket Description</label>
+        <textarea name="ticketDescription" id="ticketDescription" placeholder="Ticket Description"></textarea>
+    </div>
+    <button id="addItemWindowButton">Add Item</button>
+</section>
+
 <!--<a id="returnToLogin" href="login.html">LOGIN</a>-->
 <main>
+
     <header>
         <h1>Admin Portal</h1>
     </header>
     <section id="tableSection">
-        <input class="itemCheckbox" type="checkbox">
+        <button id="addItem">Add Item</button>
+        <!--        <input class="itemCheckbox" type="checkbox">-->
         <table id="ticketTable">
 
             <tr>
@@ -21,51 +41,25 @@
                 <th>Ticket Description</th>
                 <th>Status</th>
                 <th>Date</th>
+                <th>Time</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>Malware removal</td>
                 <td>
-                    <select>
+                    <select id="statusDropdown">
                         <option>Active</option>
                         <option>Completed</option>
                     </select>
                 </td>
                 <td>March 1, 2025</td>
+                <td>10:00 AM</td>
             </tr>
         </table>
 
 
     </section>
 
-    <section class="addItemWindow hidden">
-        <div class="container">
-            <div class="ticket-number input-field">
-                <label for="ticketNumber">Ticket Number</label>
-                <input type="text" name="ticketNumber" id="ticketNumber" placeholder="Ticket Number">
-            </div>
-
-            <div class="ticket-description input-field">
-                <label for="ticketDescription">Ticket Description</label>
-                <textarea type="text" name="ticketDescription" id="ticketDescription" placeholder="Ticket Description" ></textarea>
-            </div>
-
-            <div class="ticket-status input-field">
-                <label for="ticketStatus">Ticket Status</label>
-                <input type="text" name="ticketStatus" id="ticketStatus" placeholder="Ticket Status">
-            </div>
-
-            <div class="ticket-date input-field">
-                <label for="date">Date</label>
-                <input type="text" name="date" id="date" placeholder="Date">
-            </div>
-
-
-            <button id="addItemWindowButton">
-                Add Item
-            </button>
-        </div>
-    </section>
 
 </main>
 
