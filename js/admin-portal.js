@@ -18,14 +18,16 @@ function initializeTicketSystem() {
     // Get formatted date
     const formattedDate = getFormattedDate();
 
-    iterateStatuses(table)
+
 
     // Event Listeners
+    iterateStatuses(table)
     document.getElementById("addItemWindowCloseWindow").addEventListener("click", showAddItemWindow)
     addItemButton.addEventListener('click', showAddItemWindow);
     addItemWindowButton.addEventListener('click', () => {
         const ticketDescription = document.getElementById("ticketDescription").value;
         addItem(table.rows.length, ticketDescription, statusElement.cloneNode(true), formattedDate,currentTime);
+       
     });
 
     // Functions
@@ -79,6 +81,43 @@ function getFormattedDate() {
 }
 
 function iterateStatuses(tableElement) {
-    console.log(tableElement.rows[1].querySelector("select").value);
+    tableElement.querySelectorAll("select").forEach(item => {
+        item.addEventListener("change", function(e) {
+            
+            let target = e.target;
+
+            if(target.value.toLowerCase() === "completed") {
+                console.log("item changed", target);
+                target.closest("tr").style.backgroundColor ="red"
+            }
+            else{
+                target.closest("tr").style.backgroundColor ="transparent"
+            }
+        })
+    })
 }
-   
+
+
+
+
+
+// Why use event delegation?
+//     Performance: With many select elements, attaching individual listeners can be memory-intensive and slow, especially on older devices.
+//
+//     Dynamic content: If you're adding or removing rows dynamically, you don't need to manually add/remove event listeners for new elements.
+//
+// Cleaner code: It can lead to more maintainable code by centralizing your event handling logic.
+
+
+// function iterateStatuses(tableElement) {
+//     tableElement.addEventListener("change", function(e) {
+//         if (e.target.tagName === "SELECT") {
+//             let target = e.target;
+//             if (target.value.toLowerCase() === "completed") {
+//                 target.closest("tr").style.backgroundColor = "red";
+//             } else {
+//                 target.closest("tr").style.backgroundColor = "transparent";
+//             }
+//         }
+//     });
+// }
