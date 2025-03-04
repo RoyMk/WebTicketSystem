@@ -1,0 +1,113 @@
+body{
+    margin: 15px;
+    background-color:  #fafaf9;
+}
+
+
+.option{
+    margin-top: 5px;
+    display: flex;
+    min-width: 150px;
+    gap: 15px;
+    
+}
+
+.option p{
+    min-width: 150px;
+}
+
+  
+
+
+.configuration-panel{
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    padding: 20px;
+  
+    
+}
+
+.options{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    color: blue;
+}
+
+.permissions-list{
+    min-width: 300px;
+    margin-left: 10;
+    
+}
+
+.user-management{
+    margin-top: 30px;
+}
+
+.section-title{
+     margin-bottom: 10px;
+}
+
+.current-user{
+    font-size: large;
+}
+
+.current-user span{
+    width: fit-content;
+    font-weight: 300;
+}
+
+.ph-shield-check title{
+    font-size: 20px;
+}
+
+.editPermissionsWindow {
+    display: flex;
+    border-radius: 10px;
+    justify-items: center;
+    flex-direction: column;
+    position: fixed;
+    box-shadow: 2px 2px 8px black;
+    top: 15%;
+    left: 50%;
+    padding: 30px;
+    background-color: #ffffff;
+    transform: translateX(-50%);
+    z-index: 99;
+
+}
+
+.tooltip {
+    position: absolute;
+    top: 20%;
+    bottom: 0 ;
+    left: 42%;
+    visibility: hidden;
+    right: 0px;
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    transition: all ease-in-out 0.5s;
+    
+}
+
+
+
+
+
+.name-container{
+    position: relative;
+    display: flex;
+
+}
+
+.toggle-tt{
+
+}
+.test:hover .tooltip{
+    visibility: visible;
+    
+}

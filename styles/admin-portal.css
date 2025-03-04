@@ -98,13 +98,24 @@ select {
     }
 }
 
+.ph-user-circle{
+    font-size: 30px;
+    color: white;
 
+    cursor: pointer;
+}
 header{
     background-color: #5a72cb;
+    display: flex;
+    justify-content: space-between;
 }
 header h1{
     color: white;
     margin-left: 5px;
+}
+header a{
+    margin-right: 25px;
+    margin-top: 10px;
 }
 #tableSection {
     display: flex;
