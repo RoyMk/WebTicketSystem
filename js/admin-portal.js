@@ -88,7 +88,7 @@ function iterateStatuses(tableElement) {
 
             if(target.value.toLowerCase() === "completed") {
                 console.log("item changed", target);
-                target.closest("tr").style.backgroundColor ="red"
+                target.closest("tr").style.backgroundColor ="#28a745"
             }
             else{
                 target.closest("tr").style.backgroundColor ="transparent"
