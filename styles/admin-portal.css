@@ -1,7 +1,7 @@
 /* Table Layout */
 body{
-    background-color: #343d46;
-    color: white;
+    background-color: #f4f2ee;
+    color: black;
     font-family: "Inter",Arial, Helvetica, sans-serif;
 
 }
@@ -15,8 +15,10 @@ body{
 }
 
 table {
+    background-color: white;
     border: 1px solid black;
     border-collapse: collapse;
+    box-shadow: 2px 2px 15px #111111;
     width: 50%;
 }
 
@@ -43,6 +45,7 @@ th, td {
 .addItemWindow {
     display: flex;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px #111111;
     justify-items: center;
     flex-direction: column;
     position: fixed;
@@ -50,7 +53,7 @@ th, td {
     top: 15%;
     left: 50%;
     padding: 10px;
-    background-color: #333333;
+    background-color: #484646;
     transform: translateX(-50%);
     z-index: 99;
 
@@ -90,7 +93,7 @@ th, td {
 
 #overlay{
     position: fixed;
-    background-color: rgba(2, 2, 2, 0.78);
+    background-color: rgba(0, 0, 0, 0.18);
     width: 100%;
     top: 0;
     left: 0;
