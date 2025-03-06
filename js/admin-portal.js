@@ -1,9 +1,26 @@
 document.addEventListener('DOMContentLoaded', initializeTicketSystem);
 
+const table = document.getElementById('ticketTable')
+table.addEventListener("change",handleEventChanged);
+
+
+
+// .forEach(item => {
+//     item.addEventListener("change", function(e) {
+// //
+//         let target = e.target;
+//
+//         if(target.value.toLowerCase() === "completed") {
+//             console.log("item changed", target);
+//             target.closest("tr").style.backgroundColor ="#28a745"
+//         }
+//         else{
+//             target.closest("tr").style.backgroundColor ="transparent"
+//         }
+//     })
 function initializeTicketSystem() {
     // DOM Elements
     const addItemButton = document.getElementById('addItem');
-    const table = document.getElementById('ticketTable');
     const addItemWindow = document.querySelector(".addItemWindow");
     const addItemWindowButton = document.querySelector("#addItemWindowButton");
     const addItemWindowAllInputValues = document.querySelectorAll("#name,#department,#ticketDescription");
@@ -12,6 +29,8 @@ function initializeTicketSystem() {
         minute: 'numeric',
         hour12: true
     });
+  
+    
     // Create status element
     const statusElement = createStatusElement();
 
@@ -21,7 +40,7 @@ function initializeTicketSystem() {
 
 
     // Event Listeners
-    iterateStatuses(table)
+   
     document.getElementById("addItemWindowCloseWindow").addEventListener("click", showAddItemWindow)
     addItemButton.addEventListener('click', showAddItemWindow);
     addItemWindowButton.addEventListener('click', () => {
@@ -67,6 +86,7 @@ function createStatusElement() {
         optionElement.textContent = option;
         statusElement.appendChild(optionElement);
     });
+  
     return statusElement;
 }
 
@@ -80,23 +100,16 @@ function getFormattedDate() {
     });
 }
 
-function iterateStatuses(tableElement) {
-    tableElement.querySelectorAll("select").forEach(item => {
-        item.addEventListener("change", function(e) {
-            
-            let target = e.target;
-
-            if(target.value.toLowerCase() === "completed") {
-                console.log("item changed", target);
-                target.closest("tr").style.backgroundColor ="#28a745"
+function handleEventChanged(event) {
+    if (event.target.tagName === "SELECT") {
+            let target = event.target;
+            if (target.value.toLowerCase() === "completed") {
+                target.closest("tr").style.backgroundColor = "lightgreen";
+            } else {
+                target.closest("tr").style.backgroundColor = "transparent";
             }
-            else{
-                target.closest("tr").style.backgroundColor ="transparent"
-            }
-        })
-    })
+        }
 }
-
 
 
 

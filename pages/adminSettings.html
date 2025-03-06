@@ -9,103 +9,109 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Admin Preferences</h1>
-    <main>
-        <!-- <section class="configuration-panel">
-            <details>
-                <summary>State Management</summary>
-                <div class="options-list">
-                    <div class="option">
-                        <p>Completed Item Color</p>
-                        <select name="itemCompletedColor" id="itemCompletedColor">
-                            <option>Green</option>
-                            <option>Red</option>
-                        </select>
-                    </div>
-                </div>
-            </details>
-        </section>
-        <section class="configuration-panel">
-            <details>
-                <summary>User Management</summary>
-                <div class="options-list">
-                    <div class="option">
-                        <p>Page Inactive Timeout</p>
-                        <select name="itemCompletedColor" id="itemCompletedColor">
-                            <option>2 min</option>
-                            <option>5 min</option>
-                            <option>10 min</option>
-                        </select>
-                    </div>
+<h1>Admin Preferences</h1>
+<main>
 
-                    <div class="option">
-                        <p>User Reset Credentials Cycle</p>
-                        <select name="itemCompletedColor" id="itemCompletedColor">
-                            <option>1 month</option>
-                            <option>3 months</option>
-                        </select>
-                    </div>
-                </div>
-            </details>
-        </section>
+<section class="configuration-panel">
 
-        <section class="configuration-panel">
-            <details>
-                <summary>User Permissions</summary>
-                <div class="options-list">
-                    <div class="options">
-                        <a href="">John Doe</a>
-                        <a href="">Mike Garcia</a>
-                        <a href="">Anna Williams</a>
-                        <a href="">Samantha Bravo</a>
-                    </div>
+        <details>
+            <summary>State Management</summary>
+            <div class="options-list">
+                <div class="option">
+                    <p>Completed Item Color</p>
+                    <select name="itemCompletedColor" id="itemCompletedColor">
+                        <option>Green</option>
+                        <option>Red</option>
+                    </select>
                 </div>
-            </details>
-        </section> -->
-
-        <section class="editPermissionsWindow">
-            <div class="name-container">
-                <h5>USER</h5>
-                <p>JOHN DOE</p>
-                <div class="test">
-                    <i class="ph ph-shield-check toggle-tt"></i>
-                    <div class="tooltip">
-                        <p>tooltip</p>
-                      </div>
-                </div>
-                
-               
             </div>
-           
-          
-        </h5>
-            <div class="permissions-list">
-                <div class="ticket-management">
-                    <p class="section-title">Ticket Management</p>
-                    <hr>
-                    <div class="option">
-                        <p>Add / Edit Tickets</p>
-                        <select name="" id="">
-                            <option value="">YES</option>
-                            <option selected value="">NO</option>
-                        </select>
-                    </div>
+        </details>
+    </section>
+    <section class="configuration-panel">
+        <details>
+            <summary>User Management</summary>
+            <div class="options-list">
+                <div class="option">
+                    <p>Page Inactive Timeout</p>
+                    <select name="itemCompletedColor" id="">
+                        <option>2 min</option>
+                        <option>5 min</option>
+                        <option>10 min</option>
+                    </select>
                 </div>
-                
-                <div class="user-management"> 
-                    <p class="section-title">User Management</p>
-                    <hr>
-                    <div class="option">
-                        <p>Assign / Edit Roles</p>
-                        <select name="" id="">
-                            <option value="">YES</option>
-                            <option selected value="">NO</option>
-                        </select>
-                    </div>
+
+                <div class="option">
+                    <p>User Reset Credentials Cycle</p>
+                    <select name="itemCompletedColor">
+                        <option>1 month</option>
+                        <option>3 months</option>
+                    </select>
                 </div>
-                
             </div>
-        </section>
-    </main>
+        </details>
+    </section>
+
+    <section class="configuration-panel">
+        <details>
+            <summary>User Permissions</summary>
+            <div class="options-list">
+                <div class="options">
+                    <a href="">John Doe</a>
+                    <a href="">Mike Garcia</a>
+                    <a href="">Anna Williams</a>
+                    <a href="">Samantha Bravo</a>
+                </div>
+            </div>
+        </details>
+    </section>
+
+    <section class="editPermissionsWindow">
+        <i style="font-size: 20px; cursor: pointer"
+           class="ph ph-arrow-left closePermissionsWindow"></i>
+        <div class="current-user">
+            <h5>USER</h5>
+            <p>JOHN DOE</p>
+            <div class="tooltip-container">
+                <i class="ph ph-shield-check"></i>
+                <div class="tooltip">
+                    <p>Admin</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="permissions-list">
+
+            <div class="ticket-management">
+                <p class="section-title">Ticket Management</p>
+                <hr>
+                <div class="option">
+                    <p>Add / Edit Tickets</p>
+                    <select>
+                        <option value="">YES</option>
+                        <option selected value="">NO</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="user-management">
+                <p class="section-title">User Management</p>
+                <hr>
+                <div class="option">
+                    <p>Assign / Edit Roles</p>
+                    <select name="">
+                        <option value="">YES</option>
+                        <option selected value="">NO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="savePermissionsButton">SAVE</button>
+    </section>
+    <div class="overlay hidden"></div>
+</main>
+<script src="/js/admin-settings.js"></script>
 </body>
 </html>
