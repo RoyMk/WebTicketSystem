@@ -3,34 +3,23 @@ document.addEventListener('DOMContentLoaded', initializeTicketSystem);
 const table = document.getElementById('ticketTable')
 table.addEventListener("change",handleEventChanged);
 
-
-
-// .forEach(item => {
-//     item.addEventListener("change", function(e) {
-// //
-//         let target = e.target;
-//
-//         if(target.value.toLowerCase() === "completed") {
-//             console.log("item changed", target);
-//             target.closest("tr").style.backgroundColor ="#28a745"
-//         }
-//         else{
-//             target.closest("tr").style.backgroundColor ="transparent"
-//         }
-//     })
 function initializeTicketSystem() {
     // DOM Elements
     const addItemButton = document.getElementById('addItem');
     const addItemWindow = document.querySelector(".addItemWindow");
     const addItemWindowButton = document.querySelector("#addItemWindowButton");
-    const addItemWindowAllInputValues = document.querySelectorAll("#name,#department,#ticketDescription");
+    const addItemWindowAllInputValues = document.querySelectorAll("#name,#department,#ticketDescription,#roomNumber");
     const currentTime = new Date().toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: 'numeric',
         hour12: true
     });
-  
-    
+    const name = document.getElementById("name");
+    const roomNumber = document.getElementById('roomNumber');
+    const department = document.getElementById('department');
+    const ticketDescription = document.getElementById("ticketDescription");
+
+
     // Create status element
     const statusElement = createStatusElement();
 
@@ -44,8 +33,16 @@ function initializeTicketSystem() {
     document.getElementById("addItemWindowCloseWindow").addEventListener("click", showAddItemWindow)
     addItemButton.addEventListener('click', showAddItemWindow);
     addItemWindowButton.addEventListener('click', () => {
-        const ticketDescription = document.getElementById("ticketDescription").value;
-        addItem(table.rows.length, ticketDescription, statusElement.cloneNode(true), formattedDate,currentTime);
+        let tableSize = table.rows.length;
+        addItem(
+            tableSize,
+            name.value,
+            department.value ,
+            roomNumber.value,
+            ticketDescription.value, 
+            statusElement.cloneNode(true), 
+            formattedDate,
+            currentTime);
        
     });
 
@@ -55,15 +52,18 @@ function initializeTicketSystem() {
         document.getElementById("overlay").classList.toggle("hidden");
     }
 
-    function addItem(ticketNum, ticketDescription, status, date,time) {
-        if(![ticketNum,ticketDescription,status,date].some(item => item === "")){
+    function addItem(ticketNumber,name,department,room,ticketDescription, status, date,time) {
+        if(![name,department,ticketDescription,room].some(item => item === "")){
             
             const newRow = table.insertRow(-1);
-            newRow.insertCell(0).textContent = ticketNum;
-            newRow.insertCell(1).textContent = ticketDescription;
-            newRow.insertCell(2).appendChild(status);
-            newRow.insertCell(3).textContent = date;
-            newRow.insertCell(4).textContent = time;
+            newRow.insertCell(0).textContent = ticketNumber;
+            newRow.insertCell(1).textContent = name;
+            newRow.insertCell(2).textContent = department;
+            newRow.insertCell(3).textContent = room;
+            newRow.insertCell(4).textContent = ticketDescription;
+            newRow.insertCell(5).appendChild(status);
+            newRow.insertCell(6).textContent = date;
+            newRow.insertCell(7).textContent = time;
 
             for (const addItemWindowInput of addItemWindowAllInputValues) {
                 addItemWindowInput.value = ""
@@ -110,27 +110,3 @@ function handleEventChanged(event) {
             }
         }
 }
-
-
-
-
-// Why use event delegation?
-//     Performance: With many select elements, attaching individual listeners can be memory-intensive and slow, especially on older devices.
-//
-//     Dynamic content: If you're adding or removing rows dynamically, you don't need to manually add/remove event listeners for new elements.
-//
-// Cleaner code: It can lead to more maintainable code by centralizing your event handling logic.
-
-
-// function iterateStatuses(tableElement) {
-//     tableElement.addEventListener("change", function(e) {
-//         if (e.target.tagName === "SELECT") {
-//             let target = e.target;
-//             if (target.value.toLowerCase() === "completed") {
-//                 target.closest("tr").style.backgroundColor = "red";
-//             } else {
-//                 target.closest("tr").style.backgroundColor = "transparent";
-//             }
-//         }
-//     });
-// }
