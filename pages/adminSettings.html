@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/admin-portal.css">
-    <link rel="stylesheet" href="/styles/admin-settings.css">
+    <link rel="stylesheet" href="/styles/adminPortal.css">
+    <link rel="stylesheet" href="/styles/adminSettings.css">
     <title>Document</title>
 </head>
 <body>
@@ -56,10 +56,10 @@
             <summary>User Permissions</summary>
             <div class="options-list">
                 <div class="options">
-                    <a href="">John Doe</a>
-                    <a href="">Mike Garcia</a>
-                    <a href="">Anna Williams</a>
-                    <a href="">Samantha Bravo</a>
+                    <a href="" class="user">User 1</a>
+                    <a href="" class="user">User 2</a>
+                    <a href="" class="user">User 3</a>
+                    <a href="" class="user">User 4</a>
                 </div>
             </div>
         </details>
@@ -70,7 +70,7 @@
            class="ph ph-arrow-left closePermissionsWindow"></i>
         <div class="current-user">
             <h5>USER</h5>
-            <p>JOHN DOE</p>
+            <p class="activeUser">JOHN DOE</p>
             <div class="tooltip-container">
                 <i class="ph ph-shield-check"></i>
                 <div class="tooltip">
@@ -111,7 +111,10 @@
         <button class="savePermissionsButton">SAVE</button>
     </section>
     <div class="overlay hidden"></div>
+    <div class="savedPermissionsNotification">
+        <p>Permissions Successfully Saved</p>
+    </div>
 </main>
-<script src="/js/admin-settings.js"></script>
+<script src="/js/adminSettings.js"></script>
 </body>
 </html>

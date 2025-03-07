@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         }
         else if(isAdmin === "Valid"){
-            window.location.replace("/pages/adminPortal.html")
+            window.location.replace("../pages/adminPortal.html")
             
         }
         else {

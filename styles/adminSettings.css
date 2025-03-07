@@ -83,6 +83,7 @@ body{
 .editPermissionsWindow {
     display: flex;
     border-radius: 10px;
+    visibility: hidden;
     justify-items: center;
     flex-direction: column;
     position: fixed;
@@ -156,3 +157,30 @@ body{
 }
 
 /*Permissions Window*/
+
+.savedPermissionsNotification {
+    display: flex;
+    visibility: visible;
+    transition: all ease-in-out 0.3s;
+    background-color: green;
+    font-size: 1.5rem;
+    z-index: 9999;
+    align-items: center;
+    position: absolute;
+    width: 650px;
+    height: 50px;
+    bottom: 30%;
+    left: 500%;
+    translate(-50%,-50%)
+    right: 0;
+    top: 60%;
+    justify-content: center;
+    color: white;
+
+}
+.savedPermissionsNotification p{
+   margin: 0;
+    padding: 0;
+}
+
+
