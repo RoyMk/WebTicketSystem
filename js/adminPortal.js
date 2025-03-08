@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', initializeTicketSystem);
 
 const table = document.getElementById('ticketTable')
 table.addEventListener("change",handleEventChanged);
-
+loadTableData()
 function initializeTicketSystem() {
     // DOM Elements
     const addItemButton = document.getElementById('addItem');
@@ -18,7 +18,7 @@ function initializeTicketSystem() {
     const roomNumber = document.getElementById('roomNumber');
     const department = document.getElementById('department');
     const ticketDescription = document.getElementById("ticketDescription");
-
+  
 
     // Create status element
     const statusElement = createStatusElement();
@@ -71,16 +71,17 @@ function initializeTicketSystem() {
         }
         else {
             alert("Please fill out all the inputs")
+           
             
         }
        
-        
+
     }
 }
 
 function createStatusElement() {
     const statusElement = document.createElement("select");
-    const statusOptions = ["Active", "Completed"];
+    const statusOptions = ["Active", "Completed","Pending"];
     statusOptions.forEach(option => {
         const optionElement = document.createElement("option");
         optionElement.textContent = option;
@@ -105,8 +106,40 @@ function handleEventChanged(event) {
             let target = event.target;
             if (target.value.toLowerCase() === "completed") {
                 target.closest("tr").style.backgroundColor = "lightgreen";
-            } else {
+
+            }
+
+            else if(target.value.toLowerCase() === "pending") {
+                target.closest("tr").style.backgroundColor = "#FF8C00";
+            }else {
                 target.closest("tr").style.backgroundColor = "transparent";
             }
         }
+}
+
+function loadTableData() {
+    const savedData = localStorage.getItem('tableData');
+    if (savedData) {
+        const tableData = JSON.parse(savedData);
+        for (let i = 1; i < tableData.length; i++) {
+            const row = table.insertRow();
+            for (let j = 0; j < tableData[i].length; j++) {
+                const cell = row.insertCell();
+                cell.innerText = tableData[i][j];
+            }
+        }
+    }
+}
+
+function saveTableData(){
+    let tableData = [];
+
+    for (let row of table.rows) {
+        let rowData = [];
+        for (let cell of row.cells) {
+            rowData.push(cell.innerText);
+        }
+        tableData.push(rowData);
+    }
+    localStorage.setItem('tableData', JSON.stringify(tableData));
 }
