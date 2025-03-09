@@ -17,7 +17,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 /* Remove default margin */
@@ -136,6 +136,13 @@ th, td {
     padding: 10px;
 }
 
+tr{
+    position: relative;
+}
+
+
+
+
 .itemCheckbox {
     height: 15px;
     width: 15px;
@@ -175,10 +182,13 @@ th, td {
     display: flex;
     flex-direction: column;
     padding: 10px;
+
 }
 
 .input-field input,textarea{
     padding: 10px;
+
+
 }
 
 #ticketDescription {
@@ -208,4 +218,51 @@ th, td {
     right: 0;
     z-index: 9;
 
+}
+
+
+.context-menu-row {
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.context-menu-row ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: background-color 0.2s ease;
+}
+
+.list-item:hover {
+    background-color: #f0f0f0;
+}
+
+.item-group {
+    display: flex;
+    align-items: center;
+}
+
+.item-group i {
+    font-size: 18px;
+    color: #555;
+    margin-right: 12px;
+}
+
+.option-title {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
 }
